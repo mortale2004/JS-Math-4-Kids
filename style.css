@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  font-weight: 1000;
+  overflow: hidden;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(220, 63, 63);
+    color: white;
+    padding: 20px 0;
+}
+nav h1{
+    font-size: 2rem;
+}
+nav ul{
+    display: flex;
+    position: relative;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+nav ul li:after{
+    content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+nav ul li:hover:after{
+    transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+#score{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+}
+
+.leftCon{
+    width: 75%;
+    background-color: white;
+    border: 10px solid gainsboro;
+    border-right: 0px;
+    border-bottom: 50px solid gainsboro;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14rem;
+    letter-spacing: 3rem;
+}
+#op1
+{
+    color: rgb(231, 77, 77);
+}
+#op2
+{
+    color: rgb(255, 234, 99);
+}
+#result 
+{
+    color: grey;
+}
+#ope
+{
+    color: rgb(122, 203, 238);
+}
+#equal
+{
+    color: rgb(231, 77, 77);
+}
+.rightCon{
+    width: 25%;
+    height: 100%;
+    border-left: 0px;
+    border-bottom: 50px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+}
+.box{
+    border: 10px solid gainsboro;
+    border-bottom: 0;
+    height: 100%;
+    color: white;
+    font-size: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.box:nth-child(1)
+{
+    background-color: rgb(231, 77, 213);
+
+}
+.wrong
+{
+    background-color:  #ff0c04	!important;
+    animation: move 0.2s ease-in-out  ;
+}
+.correct
+{
+    background-color: rgb(49, 182, 49) !important;
+}
+
+@keyframes move {
+    0%{
+        transform: translate(-5px,-5px)
+    }
+    50%{
+        transform: translate(10px,10px)
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+
+.box:nth-child(2)
+{
+    background-color: rgb(122, 203, 238);
+}
+.box:nth-child(3)
+{
+    background-color: rgb(255, 234, 99);
+}
+.box:nth-child(2):hover
+{
+    color: rgb(122, 203, 238);
+    background-color: white;
+}
+.box:nth-child(3):hover
+{
+    color: rgb(255, 234, 99);
+    background-color: white;
+}
+
+
+
+@media screen and (max-width: 1150px) {
+   :root{
+    font-size: 9px;
+   }
+}
+
+@media screen and (max-width: 660px) {
+    :root{
+        font-size: 7px;
+    }
+    .leftCon{
+        width: 60%;
+        font-size: 8rem;
+        letter-spacing: 1rem;
+    }
+    .rightCon{
+        width: 40%;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .nav ul li{
+        margin: 0;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    :root{
+        font-size: 6px;
+    }
+}
